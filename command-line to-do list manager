@@ -1,0 +1,24 @@
+# simple_todo.py
+
+tasks = []
+
+while True:
+    print("\nOptions: add, list, quit")
+    choice = input("Enter choice: ").strip().lower()
+
+    if choice == "add":
+        task = input("Enter task: ")
+        tasks.append(task)
+        print("Task added!")
+    elif choice == "list":
+        if tasks:
+            print("Your tasks:")
+            for i, t in enumerate(tasks, 1):
+                print(f"{i}. {t}")
+        else:
+            print("No tasks yet.")
+    elif choice == "quit":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid option.")
